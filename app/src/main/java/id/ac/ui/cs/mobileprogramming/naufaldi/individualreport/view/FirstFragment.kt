@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import id.ac.ui.cs.mobileprogramming.naufaldi.individualreport.R
@@ -27,6 +28,7 @@ class FirstFragment : Fragment() {
             val fragmentTwo = SecondFragment()
             transaction.replace(R.id.frame, fragmentTwo)
             transaction.addToBackStack(null)
+            transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
             transaction.commit()
         }
         return rootView
@@ -37,7 +39,7 @@ class FirstFragment : Fragment() {
         viewModel = ViewModelProvider(activity!!).get(SharedViewModel::class.java)
         viewModel.getText().observe(
             viewLifecycleOwner,
-            Observer { charSequence -> editText!!.setText(charSequence) })
+            Observer { charSequence -> editText.setText(charSequence) })
     }
 }
 

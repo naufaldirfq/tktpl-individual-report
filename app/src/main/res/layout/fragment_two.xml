@@ -9,12 +9,23 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="second fragment" />
+        android:layout_marginLeft="10dp"
+        android:text="Second fragment" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:text="This is your message" />
 
     <TextView
         android:id="@+id/outPutTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="#00BCD4"
         android:gravity="center"
         android:textColor="@android:color/background_dark"
         android:textSize="24sp"

@@ -1,6 +1,5 @@
 package id.ac.ui.cs.mobileprogramming.naufaldi.individualreport.view
 
-import android.text.Editable
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
