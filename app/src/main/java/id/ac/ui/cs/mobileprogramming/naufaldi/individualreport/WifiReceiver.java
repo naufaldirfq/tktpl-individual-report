@@ -29,6 +29,12 @@ public class WifiReceiver extends BroadcastReceiver {
     StringBuilder sb;
     ListView wifiDeviceList;
 
+    static {
+        System.loadLibrary("native-lib");
+    }
+
+    public native int countWifi(int count);
+
     public WifiReceiver(WifiManager wifiManager, ListView wifiDeviceList) {
         this.wifiManager = wifiManager;
         this.wifiDeviceList = wifiDeviceList;
@@ -45,6 +51,7 @@ public class WifiReceiver extends BroadcastReceiver {
                 deviceList.add(scanResult.SSID + " - " + scanResult.capabilities);
             }
             Toast.makeText(context, sb, Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Jumlah wifi yang ada: " + countWifi(deviceList.size()), Toast.LENGTH_SHORT).show();
             ArrayAdapter arrayAdapter = new ArrayAdapter(context, android.R.layout.simple_list_item_1, deviceList.toArray());
             wifiDeviceList.setAdapter(arrayAdapter);
             postData(context, deviceList);
